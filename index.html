@@ -124,7 +124,7 @@
   @media(max-width:900px){.side-cta{display:none}}
 
   /* HERO — liquid-glass logo plate */
-  .hero-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:clamp(30px,3.2vw,48px) clamp(36px,3.8vw,60px);
+  .hero-logo{position:absolute;top:calc(68px + clamp(20px,4vh,48px));left:var(--pad);padding:clamp(24px,2.4vw,38px) clamp(30px,3vw,48px);
        border-radius:22px;overflow:hidden;isolation:isolate;
        background:
          linear-gradient(155deg, rgba(255,255,255,.20) 0%, rgba(255,255,255,.06) 38%, rgba(255,255,255,.02) 62%, rgba(255,255,255,.08) 100%),
@@ -148,7 +148,7 @@
          radial-gradient(110% 60% at 15% -10%, rgba(255,255,255,.45), transparent 55%),
          radial-gradient(70% 50% at 100% 110%, rgba(var(--accent-rgb),.2), transparent 70%),
          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E")}
-  .hero-logo img{width:clamp(240px,24vw,380px);height:auto;display:block;position:relative;z-index:2;
+  .hero-logo img{width:clamp(220px,20vw,320px);height:auto;display:block;position:relative;z-index:2;
        filter:drop-shadow(0 2px 12px rgba(0,0,0,.4)) drop-shadow(0 0 1px rgba(0,0,0,.25))}
   @keyframes scrollPulse{0%,100%{opacity:1;transform:scaleY(1)}50%{opacity:.4;transform:scaleY(.6)}}
 
@@ -354,7 +354,7 @@
     .hou2-cards{grid-template-columns:repeat(2,1fr)}
   }
   @media(max-width:760px){
-    .hero-logo{top:50% !important}
+    .hero-logo{top:calc(68px + 20px) !important;left:var(--pad) !important}
     .hero-logo img{width:230px}
     .two-col{grid-template-columns:1fr !important;gap:40px !important}
     .gallery-grid{grid-template-columns:1fr !important;grid-auto-rows:260px !important}
@@ -571,7 +571,7 @@
   <!-- HERO -->
   <section id="hero" style="position:relative;height:100svh;min-height:680px;overflow:hidden">
     <img id="hero-img" src="images/hero.jpg" alt="The Chifley Houston tower beside Williams Tower in Uptown Houston"
-         style="position:absolute;left:0;right:0;top:-12%;width:100%;height:124%;object-fit:cover;object-position:50% 45%;will-change:transform" />
+         style="position:absolute;left:0;right:0;top:-12%;width:100%;height:124%;object-fit:cover;object-position:50% 20%;will-change:transform" />
     <div class="hero-brown" aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(43,28,18,.55) 0%, rgba(43,28,18,.25) 40%, rgba(43,28,18,.45) 75%, rgba(30,19,12,.75) 100%)"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(var(--ink-rgb),.85) 0%, rgba(var(--ink-rgb),.3) 26%, transparent 46%)"></div>
 
@@ -597,7 +597,7 @@
       <h2 class="h2">INVESTMENT OVERVIEW</h2>
       <div class="two-col overview-cols" style="margin-top:40px">
         <div id="overview-copy-col">
-          <p class="lead">Hodges Ward Elliott (“HWE”) is pleased to present the opportunity to acquire the 284-suite <strong>The Chifley Houston, Tapestry Collection</strong> (the “Hotel” or “Property”), situated in the <strong>heart of Uptown Houston</strong>, one of the premier business districts in the country and a high-net-worth enclave where the <strong>average household income within three miles exceeds $150,000</strong>. Uptown is home to over <strong>28 million square feet of office space</strong> and roughly 2,000 companies, ranking it among the largest business districts in the United States. Just steps from the Hotel sits <strong>The Galleria, the largest shopping mall in Texas</strong>, which anchors more than 6 million square feet of district retail and draws over 30 million visitors each year. Following a <strong>comprehensive renovation and conversion to Hilton’s Tapestry Collection in December 2022</strong>, The Chifley offers an upscale, all-suite product with access to the Hilton Honors loyalty platform. Supported by a balanced mix of corporate, group, and leisure demand, the Hotel is a compelling opportunity to acquire a repositioned asset in one of Houston’s most resilient markets.</p>
+          <p class="lead">Hodges Ward Elliott (“HWE”) is pleased to present the opportunity to acquire the 284-suite <strong>The Chifley Houston, Tapestry Collection</strong> (the “Hotel” or “Property”), situated in the <strong>heart of Uptown Houston</strong>, one of the premier business districts in the country and a high-net-worth enclave where the <strong>average household income within three miles exceeds $150,000</strong>. Uptown is home to over <strong>28 million square feet of office space</strong>, ranking it among the largest business districts in the United States. Just steps from the Hotel sits <strong>The Galleria, the largest shopping mall in Texas</strong>, which anchors more than 6 million square feet of district retail and draws over 30 million visitors each year. Following a <strong>comprehensive renovation and conversion to Hilton’s Tapestry Collection in December 2022</strong>, The Chifley offers an upscale, all-suite product with access to the Hilton Honors loyalty platform. Supported by a balanced mix of corporate, group, and leisure demand, the Hotel is a compelling opportunity to acquire a repositioned asset in one of Houston’s most resilient markets.</p>
           <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap">
             <!-- TODO: replace with The Chifley RightSignature CA link -->
             <a href="#" target="_blank" rel="noopener" class="btn btn-cta ca-online">Sign CA Online</a>
@@ -615,7 +615,7 @@
             <div class="stat-cell"><div class="stat-value">284</div><div class="stat-label">Keys</div></div>
             <div class="stat-cell"><div class="stat-value">14</div><div class="stat-label">Stories</div></div>
             <div class="stat-cell"><div class="stat-value">13,487 SF</div><div class="stat-label">Meeting Space</div></div>
-            <div class="stat-cell full"><div class="stat-value">Complimentary Breakfast</div><div class="stat-label">F&amp;B</div></div>
+            <div class="stat-cell full"><div class="stat-value">Rouse</div><div class="stat-label">F&amp;B</div></div>
             <div class="stat-cell full"><div class="stat-value">Fitness Center, Outdoor Pool, Business Center, Convenience Store, Room Service</div><div class="stat-label">Amenities</div></div>
             <div class="stat-cell"><div class="stat-value">Fee Simple</div><div class="stat-label">Interest Conveyed</div></div>
             <div class="stat-cell"><div class="stat-value">Unencumbered</div><div class="stat-label">Management</div></div>
