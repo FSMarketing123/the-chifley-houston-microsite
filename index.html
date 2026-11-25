@@ -124,7 +124,7 @@
   @media(max-width:900px){.side-cta{display:none}}
 
   /* HERO — liquid-glass logo plate */
-  .hero-logo{position:absolute;top:calc(68px + clamp(20px,4vh,48px));left:var(--pad);padding:clamp(24px,2.4vw,38px) clamp(30px,3vw,48px);
+  .hero-logo{position:absolute;top:calc(68px + clamp(10px,1.6vh,20px));right:clamp(18px,2.4vw,40px);padding:clamp(18px,1.8vw,28px) clamp(22px,2.2vw,36px);
        border-radius:22px;overflow:hidden;isolation:isolate;
        background:
          linear-gradient(155deg, rgba(255,255,255,.20) 0%, rgba(255,255,255,.06) 38%, rgba(255,255,255,.02) 62%, rgba(255,255,255,.08) 100%),
@@ -148,7 +148,7 @@
          radial-gradient(110% 60% at 15% -10%, rgba(255,255,255,.45), transparent 55%),
          radial-gradient(70% 50% at 100% 110%, rgba(var(--accent-rgb),.2), transparent 70%),
          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E")}
-  .hero-logo img{width:clamp(220px,20vw,320px);height:auto;display:block;position:relative;z-index:2;
+  .hero-logo img{width:clamp(160px,14.5vw,232px);height:auto;display:block;position:relative;z-index:2;
        filter:drop-shadow(0 2px 12px rgba(0,0,0,.4)) drop-shadow(0 0 1px rgba(0,0,0,.25))}
   @keyframes scrollPulse{0%,100%{opacity:1;transform:scaleY(1)}50%{opacity:.4;transform:scaleY(.6)}}
 
@@ -175,8 +175,7 @@
   .g-caption{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;
        background:linear-gradient(to top, rgba(0,0,0,.6), transparent);
        font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#fff;
-       opacity:0;transition:opacity .3s}
-  .g-item:hover .g-caption{opacity:1}
+       opacity:1}
 
   /* Highlights */
   .highlight-section h2{margin-top:0}
@@ -198,6 +197,7 @@
   /* Figure callouts */
   .figures{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
   .figures.five{grid-template-columns:repeat(5,1fr)}
+  .figures.two{grid-template-columns:repeat(2,1fr)}
   .figure{background:var(--navy-lt);border-left:3px solid var(--accent);padding:24px 22px 22px;
        transition:transform .25s ease,box-shadow .25s ease}
   .figure:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,0,0,.4)}
@@ -208,11 +208,13 @@
        color:var(--muted);margin-top:10px;line-height:1.5}
 
   /* Logo tiles */
-  .logo-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:24px}
+  .logo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
   .logo-tile{background:var(--ink);border-radius:4px;padding:20px;height:110px;
        display:flex;align-items:center;justify-content:center;
        transition:transform .3s ease,box-shadow .3s ease}
   .logo-tile img{max-width:80%;max-height:58px;display:block;filter:brightness(0) invert(1)}
+  .logo-grid .logo-tile{height:132px;flex-direction:column;gap:12px}
+  .tile-label{font-family:var(--font-body);font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.82);text-align:center;line-height:1.3}
   button.logo-tile{border:0;width:100%;font:inherit;color:inherit;cursor:pointer}
   button.logo-tile:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .logo-tile:hover{transform:scale(1.06);box-shadow:0 18px 44px rgba(0,0,0,.45);z-index:2}
@@ -336,7 +338,6 @@
        font-size:11.5px;color:rgba(255,255,255,.65)}
 
   @media(max-width:1100px){
-    .logo-grid{grid-template-columns:repeat(3,1fr)}
     .figures.five{grid-template-columns:repeat(3,1fr)}
   }
   @media(max-width:900px){
@@ -354,8 +355,8 @@
     .hou2-cards{grid-template-columns:repeat(2,1fr)}
   }
   @media(max-width:760px){
-    .hero-logo{top:calc(68px + 16px) !important;left:50% !important;transform:translateX(-50%);padding:20px 28px !important}
-    .hero-logo img{width:230px}
+    .hero-logo{top:calc(68px + 14px) !important;left:50% !important;right:auto !important;transform:translateX(-50%);padding:15px 21px !important}
+    .hero-logo img{width:150px}
     .two-col{grid-template-columns:1fr !important;gap:40px !important}
     .gallery-grid{grid-template-columns:1fr !important;grid-auto-rows:260px !important}
     .g-item{grid-column:auto !important;grid-row:auto !important}
@@ -553,7 +554,7 @@
         <a href="#overview">Overview</a>
         <a href="#gallery">Gallery</a>
         <a href="#location">Location</a>
-        <a href="#uptown">Uptown</a>
+        <a href="#renovation">Renovation</a>
         <a href="#corporate">Corporate</a>
         <a href="#galleria">The Galleria</a>
         <a href="#houston">Houston</a>
@@ -571,12 +572,12 @@
   <!-- HERO -->
   <section id="hero" style="position:relative;height:100svh;min-height:680px;overflow:hidden">
     <img id="hero-img" src="images/hero.jpg" alt="The Chifley Houston tower beside Williams Tower in Uptown Houston"
-         style="position:absolute;left:0;right:0;top:-12%;width:100%;height:124%;object-fit:cover;object-position:50% 20%;will-change:transform" />
+         style="position:absolute;left:0;right:0;top:0;width:100%;height:112%;object-fit:cover;object-position:50% 0%;will-change:transform" />
     <div class="hero-brown" aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(43,28,18,.55) 0%, rgba(43,28,18,.25) 40%, rgba(43,28,18,.45) 75%, rgba(30,19,12,.75) 100%)"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(var(--ink-rgb),.85) 0%, rgba(var(--ink-rgb),.3) 26%, transparent 46%)"></div>
 
     <div class="hero-logo">
-      <img src="images/logo-chifley-white.svg" alt="The Chifley Houston, Tapestry Collection by Hilton" />
+      <img src="images/logo-chifley-white-v2.svg" alt="The Chifley Houston, Tapestry Collection by Hilton" />
     </div>
 
     <div style="position:absolute;bottom:0;left:0;right:0;padding-bottom:clamp(36px,5vh,64px);
@@ -615,7 +616,7 @@
             <div class="stat-cell"><div class="stat-value">284</div><div class="stat-label">Keys</div></div>
             <div class="stat-cell"><div class="stat-value">14</div><div class="stat-label">Stories</div></div>
             <div class="stat-cell"><div class="stat-value">13,487 SF</div><div class="stat-label">Meeting Space</div></div>
-            <div class="stat-cell full"><div class="stat-value">Rouse</div><div class="stat-label">F&amp;B</div></div>
+            <div class="stat-cell full"><div class="stat-value">Rouse Craft Cooking</div><div class="stat-label">F&amp;B</div></div>
             <div class="stat-cell full"><div class="stat-value">Fitness Center, Outdoor Pool, Business Center, Convenience Store, Room Service</div><div class="stat-label">Amenities</div></div>
             <div class="stat-cell"><div class="stat-value">Fee Simple</div><div class="stat-label">Interest Conveyed</div></div>
             <div class="stat-cell"><div class="stat-value">Unencumbered</div><div class="stat-label">Management</div></div>
@@ -665,7 +666,7 @@
     <div class="section" style="padding-bottom:0">
       <div class="wrap">
         <h2 class="h2">EXCEPTIONAL LOCATION</h2>
-        <p class="lead" style="margin-top:24px">The Hotel is positioned along the <strong>I-610 West Loop just off Westheimer Road</strong>, placing guests within walking distance of The Galleria and the luxury boutiques of River Oaks District. This prominent address puts the Property at the center of Uptown’s dense concentration of office towers, retail, and dining, with roughly 2,000 companies operating in the surrounding district. Just one mile away, the <strong>1,500-acre Memorial Park</strong> offers approximately 30 miles of trails and is nearly double the size of New York’s Central Park. Direct access to the West Loop provides efficient connectivity across the city, with Greenway Plaza about three miles away, while <strong>Downtown Houston and the Texas Medical Center are each roughly seven miles from the Hotel</strong>. Travelers also benefit from convenient access to both of the city’s major airports, as William P. Hobby sits just a 20-minute drive southeast and George Bush Intercontinental lies a 25-minute drive northeast. These attributes align particularly well with The Chifley’s upscale, all-suite product, which is positioned to capture a diversified mix of corporate, group, and leisure demand.</p>
+        <p class="lead" style="margin-top:24px">The Hotel is positioned along the <strong>I-610 West Loop just off Westheimer Road</strong>, within walking distance of The Galleria and the luxury boutiques of River Oaks District. Less than one mile away, the <strong>Post Oak Boulevard office corridor</strong> is home to the global headquarters of Westlake Corporation and Stewart Information Services, along with Williams’ largest office outside of Tulsa. Landry’s and Burns &amp; McDonnell are even closer, with offices on the same stretch of the West Loop as the Hotel. The West Loop also provides direct access to I-10, I-69, and Greenway Plaza, home to Occidental Petroleum’s headquarters. Both of Houston’s major airports are easily accessible. Together, these attributes make The Chifley’s upscale, all-suite product a natural fit for weekday business travelers and weekend leisure guests alike.</p>
 
         <div class="eyebrow" style="margin-top:56px;margin-bottom:20px">Demand Generators Map</div>
         <div class="map-shell">
@@ -679,14 +680,12 @@
           <button class="reset-btn" id="reset-map">Reset Map</button>
         </div>
 
-        <div class="eyebrow" style="margin-top:56px;margin-bottom:4px">Surrounded by Leading Demand Drivers</div>
+        <div class="eyebrow" style="margin-top:56px;margin-bottom:4px">Surrounded by Leading Demand Drivers <span style="text-transform:none;letter-spacing:.02em;font-style:italic;opacity:.7">— tap a tile to locate it on the map</span></div>
         <div class="logo-grid">
-          <button type="button" class="logo-tile" data-gen="The Galleria" aria-label="Show The Galleria on the map"><img src="images/logos/galleria.svg" alt="The Galleria"></button>
-          <button type="button" class="logo-tile" data-gen="River Oaks District" aria-label="Show River Oaks District on the map"><img src="images/logos/river-oaks.svg" alt="River Oaks District"></button>
-          <button type="button" class="logo-tile" data-gen="Memorial Park" aria-label="Show Memorial Park on the map"><img src="images/logos/memorial-park.svg" alt="Memorial Park Conservancy"></button>
-          <button type="button" class="logo-tile" data-gen="Houston Zoo" aria-label="Show Hermann Park area on the map"><img src="images/logos/hermann-park.svg" alt="Hermann Park Conservancy"></button>
-          <button type="button" class="logo-tile" data-gen="William P. Hobby Airport" aria-label="Show William P. Hobby Airport on the map"><img src="images/logos/hobby.svg" alt="William P. Hobby Airport"></button>
-          <button type="button" class="logo-tile" data-gen="George Bush Intercontinental Airport" aria-label="Show George Bush Intercontinental Airport on the map"><img src="images/logos/iah.svg" alt="George Bush Intercontinental Airport"></button>
+          <button type="button" class="logo-tile" data-gen="The Galleria" aria-label="Show The Galleria on the map"><img src="images/logos/galleria.svg" alt="The Galleria"><span class="tile-label">The Galleria · 0.3 mi</span></button>
+          <button type="button" class="logo-tile" data-gen="River Oaks District" aria-label="Show River Oaks District on the map"><img src="images/logos/river-oaks.svg" alt="River Oaks District"><span class="tile-label">River Oaks District · 0.4 mi</span></button>
+          <button type="button" class="logo-tile" data-gen="William P. Hobby Airport" aria-label="Show William P. Hobby Airport on the map"><img src="images/logos/hobby.svg" alt="William P. Hobby Airport"><span class="tile-label">Hobby Airport · 15.6 mi</span></button>
+          <button type="button" class="logo-tile" data-gen="George Bush Intercontinental Airport" aria-label="Show George Bush Intercontinental Airport on the map"><img src="images/logos/iah.svg" alt="George Bush Intercontinental Airport"><span class="tile-label">Bush Airport · 24.0 mi</span></button>
         </div>
       </div>
     </div>
@@ -719,21 +718,18 @@
   <div class="loc-popout-backdrop" id="loc-popout-backdrop"></div>
   <div class="loc-popout-stage" id="loc-popout-stage"></div>
 
-  <!-- UPTOWN – HIGH NET WORTH SUBMARKET -->
-  <section class="section highlight-section t-white" id="uptown">
+  <!-- COMPREHENSIVE RENOVATION & TAPESTRY REBRAND -->
+  <section class="section highlight-section t-white" id="renovation">
     <div class="wrap">
-      <h2 class="h2">UPTOWN – HIGH NET WORTH SUBMARKET</h2>
-      <p class="lead full-copy">Uptown Houston represents one of the most affluent and dynamic submarkets in the country. Spanning approximately 500 acres, the district blends a deep corporate presence, world-class luxury retail, and some of Houston’s most prestigious residential enclaves. The Hotel’s immediate surroundings are exceptionally wealthy, with <strong>average household incomes exceeding $150,000 within one mile</strong>, almost double the Houston citywide average. Neighboring River Oaks, long regarded as Houston’s premier address, carries a <strong>median home sale price of roughly $2 million</strong>, while nearby Piney Point Village posts an <strong>average home sale price of $3.48 million</strong>. That spending power is on full display at The Galleria, where anchors such as Neiman Marcus, Saks Fifth Avenue, and Nordstrom draw shoppers from across the region and around the world. On a typical day, roughly <strong>200,000 residents, employees, and visitors</strong> fill the district, generating consistent demand for upscale lodging. Backed by a deep base of affluent residents and limited developable land, Uptown provides durable lodging demand alongside long-term real estate value preservation.</p>
+      <h2 class="h2">COMPREHENSIVE RENOVATION &amp; TAPESTRY REBRAND</h2>
+      <p class="lead full-copy">In 2022, the Hotel completed an approximately <strong>$25 million gut renovation</strong> that transformed the former Sheraton Suites Houston from top to bottom. The project fully renovated <strong>all 284 suites, the public spaces, and roughly 8,000 square feet of meeting space</strong>. It also introduced <strong>Rouse Craft Cooking</strong>, a new destination restaurant and bar. The Property relaunched in early 2023 as The Chifley, the <strong>first Tapestry Collection Hotel in Houston</strong>, giving guests access to the Hilton Honors loyalty program. With the renovation complete, new ownership can focus on continued ramp-up rather than repositioning.</p>
       <div class="under-photos" style="grid-template-columns:1.501fr 1.25fr">
         <div class="photo-frame"><img src="images/uptown-rod-1.jpg" alt="Luxury storefronts at River Oaks District" /><div class="photo-label">River Oaks District</div></div>
         <div class="photo-frame"><img src="images/uptown-rod-2.jpg" alt="Luxury boutiques along River Oaks District" /><div class="photo-label">Uptown Luxury Retail</div></div>
       </div>
-      <div class="figures five">
-        <div class="figure"><div class="v">$151,512</div><div class="l">Average Household Income (3-Mile Radius, 2025)</div></div>
-        <div class="figure"><div class="v">~$2 Million</div><div class="l">Median Home Sale Price in River Oaks</div></div>
-        <div class="figure"><div class="v">$3.48 Million</div><div class="l">Average Home Sale Price in Piney Point Village</div></div>
-        <div class="figure"><div class="v">200,000</div><div class="l">Daily Residents, Employees, and Visitors in Uptown</div></div>
-        <div class="figure"><div class="v">30+ Million</div><div class="l">Annual Galleria Visitors</div></div>
+      <div class="figures two">
+        <div class="figure"><div class="v">$25 Million</div><div class="l">Dollar Renovation</div></div>
+        <div class="figure"><div class="v">First</div><div class="l">Tapestry Collection Hotel in Houston</div></div>
       </div>
     </div>
   </section>
@@ -742,7 +738,7 @@
   <section class="section highlight-section t-dark" id="corporate">
     <div class="wrap">
       <h2 class="h2">DEEP CORPORATE DEMAND</h2>
-      <p class="lead full-copy">Uptown is one of the largest business districts in the country, with <strong>more than 28 million square feet of office space and roughly 2,000 companies</strong>. Energy, chemicals, finance, and professional services make up much of that base. <strong>Westlake Corporation</strong>, a chemical manufacturer with approximately 16,000 employees worldwide, keeps its global headquarters on Post Oak Boulevard. An eight-minute walk from the Hotel, the <strong>64-story Williams Tower</strong> changed hands in July 2026 when Williams Companies bought its namesake building for $300 million. <strong>Frost Bank’s 55,000-square-foot regional headquarters</strong> at BLVD Place adds to the district’s financial presence. Together, these employers drive steady weekday business from executives, consultants, project teams, and visiting clients. The Chifley’s suites are a natural fit for longer stays, especially for relocating employees or project-based travelers who prefer to walk to meetings and dinner.</p>
+      <p class="lead full-copy">Uptown is home to roughly 2,000 companies, and several of the most recognizable are headquartered just minutes from the Hotel. <strong>Westlake Corporation (Fortune #388)</strong> runs its global headquarters at 2801 Post Oak Boulevard, while <strong>Stewart Information Services</strong> occupies 156,000 square feet at Four Oaks Place. <strong>Landry’s</strong> is based at 1510 West Loop South, on the same stretch of highway as the Hotel. Less than one mile away, <strong>Williams bought its namesake 64-story tower for $300 million</strong> in July 2026 and plans to grow its Houston workforce beyond 700 employees. <strong>Woodside Energy</strong> runs its Americas operations from 1500 Post Oak Boulevard. <strong>Frost Bank’s 55,000-square-foot regional headquarters</strong> at BLVD Place adds to the district’s financial presence. Together, these employers drive steady weekday business from executives, consultants, project teams, and visiting clients, a natural fit for The Chifley’s spacious suites.</p>
       <div class="under-photos" style="grid-template-columns:1.501fr .8fr">
         <div class="photo-frame"><img src="images/corp-meeting.jpg" alt="Meeting room set classroom style" /><div class="photo-label">13,487 SF of Meeting Space</div></div>
         <div class="photo-frame"><img src="images/corp-williams.jpg" alt="The Chifley with Williams Tower behind it" /><div class="photo-label">The Chifley &amp; Williams Tower</div></div>
@@ -754,7 +750,7 @@
   <section class="section highlight-section t-cream" id="galleria">
     <div class="wrap">
       <h2 class="h2">THE GALLERIA – TEXAS’ PREMIER RETAIL DESTINATION</h2>
-      <p class="lead full-copy">Just a <strong>five-minute walk from the Hotel</strong>, The Galleria is the <strong>largest shopping mall in Texas</strong> and the most visited attraction in Greater Houston. Hines developed the center in 1970, and it has since grown to <strong>2.4 million square feet with roughly 400 stores and restaurants</strong>. Neiman Marcus, Saks Fifth Avenue, Nordstrom, and Macy’s anchor the mall today. <strong>More than 30 million visitors</strong> come through each year, drawn by the shopping, the dining, and a full-size indoor ice rink. Owner Simon Property Group continues to put money into the property, most recently committing $9 million to build out a new Aritzia store. For the Hotel, The Galleria brings steady weekend leisure traffic while giving corporate guests an easy place to grab dinner or entertain clients after hours.</p>
+      <p class="lead full-copy">Just a <strong>five-minute walk from the Hotel</strong>, The Galleria is the <strong>largest shopping mall in Texas</strong>. Hines developed the center in 1970, and it has since grown to <strong>2.4 million square feet with roughly 400 stores and restaurants</strong>. Neiman Marcus, Saks Fifth Avenue, Nordstrom, and Macy’s anchor the mall today. <strong>More than 30 million visitors</strong> come through each year, drawn by the shopping, the dining, and a full-size indoor ice rink. Owner Simon Property Group continues to reinvest in the center, most recently committing $9 million to a new Aritzia store. For the Hotel, The Galleria brings steady weekend leisure traffic while giving corporate guests an easy place to grab dinner or entertain clients after hours.</p>
       <div class="under-photos galleria-row" style="grid-template-columns:1.333fr .9fr">
         <div class="photo-frame"><img src="images/galleria.jpg" alt="The Galleria entrance and dining terrace at dusk" /><div class="photo-label">The Galleria</div></div>
         <button type="button" class="galleria-plate logo-tile" data-gen="The Galleria" aria-label="Show The Galleria on the map"><img src="images/logos/galleria.svg" alt="The Galleria"></button>
@@ -781,7 +777,7 @@
       <div class="hou2-grid">
         <div class="hou2-stats">
           <div class="hstat"><div class="n">#1</div><div class="t">U.S. Metro for Population Growth</div><div class="r"></div><div class="s">U.S. Census Bureau, 2025</div></div>
-          <div class="hstat"><div class="n">#2</div><div class="t">Metro for Fortune 500 Headquarters</div><div class="r"></div><div class="s">Fortune, 2026</div></div>
+          <div class="hstat"><div class="n">#2</div><div class="t">Metro for<br>Fortune 500<br>Headquarters</div><div class="r"></div><div class="s">Fortune, 2026</div></div>
           <div class="hstat"><div class="n">#9</div><div class="t">Best U.S. City</div><div class="r"></div><div class="s">Resonance, 2026</div></div>
           <div class="hstat"><div class="n">#2</div><div class="t">Most Diverse Large City in America</div><div class="r"></div><div class="s">WalletHub, 2026</div></div>
           <div class="hstat"><div class="n">#1</div><div class="t">U.S. County for Corporate Projects (Harris County)</div><div class="r"></div><div class="s">Site Selection, 2026</div></div>
@@ -846,7 +842,7 @@
 
   <script>
     // Demand drivers from "Microsite Working File - The Chifley.xlsx" (Demand Generators sheet).
-    var HOTEL = { name: "The Chifley Houston, Tapestry Collection", lat: 29.7372, lng: -95.4557 };
+    var HOTEL = { name: "The Chifley Houston, Tapestry Collection", lat: 29.7421, lng: -95.4600 };
     var GENERATORS = [
       { name: "The Galleria",                          dist: "0.3", lat: 29.7392, lng: -95.4632 },
       { name: "River Oaks District",                   dist: "0.4", lat: 29.7405, lng: -95.4478 },
